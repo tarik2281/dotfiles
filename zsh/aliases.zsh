@@ -14,6 +14,12 @@ alias t2="tree -C -L 2"
 alias t3="tree -C -L 3"
 alias t4="tree -C -L 4"
 
+alias ta="tree -C -a"
+alias ta1="tree -C -L 1 -a"
+alias ta2="tree -C -L 2 -a"
+alias ta3="tree -C -L 3 -a"
+alias ta4="tree -C -L 4 -a"
+
 alias grep="grep --color=auto"
 
 alias vi="nvim"

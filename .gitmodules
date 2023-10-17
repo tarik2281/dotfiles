@@ -13,3 +13,12 @@
 [submodule "zsh/plugins/zsh-z"]
 	path = zsh/plugins/zsh-z
 	url = https://github.com/agkozak/zsh-z
+[submodule "zsh/plugins/jq-zsh-plugin"]
+	path = zsh/plugins/jq-zsh-plugin
+	url = https://github.com/reegnz/jq-zsh-plugin.git
+[submodule "zsh/plugins/zsh-fzf-history-search"]
+	path = zsh/plugins/zsh-fzf-history-search
+	url = https://github.com/joshskidmore/zsh-fzf-history-search
+[submodule "zsh/plugins/zsh-better-npm-completion"]
+	path = zsh/plugins/zsh-better-npm-completion
+	url = https://github.com/lukechilds/zsh-better-npm-completion
