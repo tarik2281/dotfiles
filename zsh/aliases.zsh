@@ -27,6 +27,30 @@ alias vim="nvim"
 
 alias zshrc="zsh -c \"cd \${ZSH} && nvim .zshrc\""
 
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# git
+
+alias g="git"
+alias gs="git status"
+alias ga="git add"
+alias gaa="git add ."
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gca="git commit --amend"
+alias gcam="git commit --amend -m"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias gcom="git checkout main"
+alias gbd="git branch -D"
+alias gbr="git branch"
+alias gbrd="git branch -d"
+alias gbrm="git branch -m"
+alias gbrmd="git branch --merged | grep -v \"main\" | xargs git branch -d"
+
 # docker
 
 alias d="docker"

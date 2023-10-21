@@ -20,7 +20,8 @@ source "${ZSH}/.p10k.zsh"
 
 source "${ZSH}/plugins/colored-man-pages/colored-man-pages.plugin.zsh"
 source "${ZSH}/plugins/zsh-fzf-history-search/zsh-fzf-history-search.plugin.zsh"
-source "${ZSH}/plugins/jq-zsh-plugin/jq.plugin.zsh"
+source "${ZSH}/plugins/yq-zsh-plugin/yq.plugin.zsh"
+# source "${ZSH}/plugins/jq-zsh-plugin/jq.plugin.zsh"
 source "${ZSH}/plugins/zsh-z/zsh-z.plugin.zsh"
 
 eval "$($(brew --prefix)/bin/rtx activate zsh)"
