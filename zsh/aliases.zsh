@@ -50,17 +50,22 @@ alias gbr="git branch"
 alias gbrd="git branch -d"
 alias gbrm="git branch -m"
 alias gbrmd="git branch --merged | grep -v \"main\" | xargs git branch -d"
+alias gf="git fetch"
+alias gfa="git fetch --all"
+alias gl="git pull"
+alias gp="git push"
 
 # docker
 
 alias d="docker"
-alias dc="docker compose"
+alias dco="docker compose"
 alias drmia="docker rmi -f \$(docker images -aq)"
 
 # nerdctl
 
 alias n="nerdctl"
 alias nk="nerdctl -n k8s.io"
+alias nco="nerdctl compose"
 
 # sepoctl
 
