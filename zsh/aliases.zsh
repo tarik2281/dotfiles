@@ -26,6 +26,8 @@ alias vi="nvim"
 alias vim="nvim"
 
 alias zshrc="zsh -c \"cd \${ZSH} && nvim .zshrc\""
+alias zshalias="zsh -c \"cd \${ZSH} && nvim aliases.zsh\""
+alias zshreload="exec zsh -l"
 
 alias ..="cd .."
 alias ...="cd ../.."
