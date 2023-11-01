@@ -34,10 +34,11 @@ alias .....="cd ../../../.."
 
 # git
 
+alias git="LANG=en_US git"
 alias g="git"
 alias gs="git status"
 alias ga="git add"
-alias gaa="git add ."
+alias gaa="git add -A"
 alias gc="git commit"
 alias gcm="git commit -m"
 alias gca="git commit --amend"

@@ -1,0 +1,13 @@
+#!/bin/sh
+YQ_REPL_YQ="${YQ_REPL_YQ:-yq}"
+$YQ_REPL_YQ -r '
+[
+  .. | path |
+  map(
+    select(type == "string" and (test("[^a-zA-Z0-9_]") or test("^[0-9]"))) |= "[\"" + . + "\"]"
+  ) |
+  map(
+    select(type == "number") |= "[]"
+  ) | join(".")
+] | sort | unique | .[] | split(".[") | join("[") | "." + .
+'
