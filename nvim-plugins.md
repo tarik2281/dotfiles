@@ -45,6 +45,13 @@
 - folke/which-key.nvim
 - folke/trouble.nvim
 - github/copilot.vim
+- NeogitOrg/neogit
+
+## UI
 
 - akinsho/toggleterm.nvim
 - akinsho/bufferline.nvim
+- nvim-lualine/lualine.nvim
+- rcarriga/nvim-dap-ui
+- catppuccin/nvim
+- xiyaowong/transparent.nvim
