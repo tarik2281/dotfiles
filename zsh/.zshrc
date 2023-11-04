@@ -24,7 +24,7 @@ source "${ZSH}/plugins/yq-repl/yq.plugin.zsh"
 # source "${ZSH}/plugins/jq-zsh-plugin/jq.plugin.zsh"
 source "${ZSH}/plugins/zsh-z/zsh-z.plugin.zsh"
 
-eval "$($(brew --prefix)/bin/rtx activate zsh)"
+eval "$(rtx activate zsh)"
 
 if [[ -f "${ZSH}/cache/.zcompdump" ]]; then
   compinit -C -i -d "${ZSH}/cache/.zcompdump"

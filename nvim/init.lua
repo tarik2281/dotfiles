@@ -1,14 +1,17 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 vim.opt.number = true
-vim.opt.numberwidth = 2
+vim.opt.numberwidth = 3
 vim.opt.ruler = false
 vim.opt.relativenumber = true
 
 vim.opt.cursorline = true
+
+vim.wo.signcolumn = 'yes'
 
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
@@ -41,7 +44,11 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Plugins Setup
 require("lazy").setup({
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+    },
     {
         "xiyaowong/transparent.nvim",
         lazy = false,
@@ -53,12 +60,42 @@ require("lazy").setup({
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
-                ensure_installed = { "lua", "vim" },
+                ensure_installed = { 
+                    "bash",
+                    "css",
+                    "csv",
+                    "dockerfile",
+                    "go",
+                    "gomod",
+                    "gosum",
+                    "gowork",
+                    "graphql",
+                    "groovy",
+                    "html",
+                    "java",
+                    "javascript",
+                    "json",
+                    "lua",
+                    "proto",
+                    "python",
+                    "scss",
+                    "sql",
+                    "toml",
+                    "typescript",
+                    "vim",
+                    "xml",
+                    "yaml",
+                },
                 sync_install = false,
                 highlight = { enable = true },
                 indent = { enable = true },
             })
         end,
+    },
+    { 
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {},
     },
     {
         "nvim-telescope/telescope.nvim",
@@ -85,6 +122,11 @@ require("lazy").setup({
         "neovim/nvim-lspconfig",
         dependencies = {
             { "hrsh7th/cmp-nvim-lsp" },
+            {
+                "j-hui/fidget.nvim",
+                tag = "legacy",
+                opts = {},
+            },
         },
     },
     {
@@ -125,6 +167,14 @@ require("lazy").setup({
     },
     {
         "nvim-lualine/lualine.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+    },
+    {
+        "akinsho/bufferline.nvim",
+        enabled = true,
+        version = "*",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
@@ -197,8 +247,37 @@ cmp.setup({
 })
 
 require("nvim-tree").setup({
+    disable_netrw = true,
     view = {
-        width = 40,
+        width = function()
+            return math.floor(vim.opt.columns:get() * 0.5)
+        end,
+        relativenumber = true,
+        float = {
+            enable = true,
+            open_win_config = function()
+                local WIDTH_RATIO = 0.5
+                local HEIGHT_RATIO = 0.8
+
+                local screen_w = vim.opt.columns:get()
+                local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+                local window_w = screen_w * WIDTH_RATIO
+                local window_h = screen_h * HEIGHT_RATIO
+                local window_w_int = math.floor(window_w)
+                local window_h_int = math.floor(window_h)
+                local center_x = (screen_w - window_w) / 2
+                local center_y = ((vim.opt.lines:get() - window_h) / 2)
+                - vim.opt.cmdheight:get()
+                return {
+                    border = "none",
+                    relative = "editor",
+                    row = center_y,
+                    col = center_x,
+                    width = window_w_int,
+                    height = window_h_int,
+                }
+            end,
+        },
     },
 })
 
@@ -229,6 +308,8 @@ require("transparent").setup({
         "NvimTreeNormal",
     },
 })
+
+-- require("bufferline").setup({})
 
 -- Catppuccin Theme
 require("catppuccin").setup({
@@ -261,11 +342,50 @@ vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 --
 -- vim.keymap.set("t", "<C-w>h", "<C-\\><C-n>", {})
 
+
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
+
+-- indent-blankline
+local highlight = {
+    "RainbowRed",
+    "RainbowYellow",
+    "RainbowBlue",
+    "RainbowOrange",
+    "RainbowGreen",
+    "RainbowViolet",
+    "RainbowCyan",
+}
+
+local hooks = require "ibl.hooks"
+-- create the highlight groups in the highlight setup hook, so they are reset
+-- every time the colorscheme changes
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+    vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+    vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+    vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+    vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+    vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+    vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+end)
+
+-- require("ibl").setup { indent = { highlight = highlight } }
+
 -- Keymaps
-vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
+vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help" })
+vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "Find recently opened files" })
 
 vim.keymap.set("n", "<C-u>", "<C-u>zz", {})
 vim.keymap.set("n", "<C-d>", "<C-d>zz", {})
@@ -275,4 +395,17 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", {})
 vim.keymap.set("n", "<C-j>", "<C-w>j", {})
 vim.keymap.set("n", "<C-k>", "<C-w>k", {})
 
-vim.keymap.set("n", "<C-n>", "<cmd> NvimTreeToggle <CR>", {})
+-- vim.keymap.set("i", "<C-h>", "<Esc><C-w>h", {})
+-- vim.keymap.set("i", "<C-l>", "<Esc><C-w>l", {})
+-- vim.keymap.set("i", "<C-j>", "<Esc><C-w>j", {})
+-- vim.keymap.set("i", "<C-k>", "<Esc><C-w>k", {})
+
+vim.keymap.set("i", "<C-b>", "<Esc>^i", { desc = "Beginning of line" })
+vim.keymap.set("i", "<C-e>", "<End>", { desc = "End of line" })
+
+vim.keymap.set("i", "<C-h>", "<Left>", { desc = "Move left" })
+vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move right" })
+vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move down" })
+vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move up" })
+
+vim.keymap.set("n", "<C-n>", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle NvimTree" })
