@@ -1,6 +1,3 @@
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
-
 require("usr.core.options")
 require("usr.core.keymaps")
 require("usr.core.utils")

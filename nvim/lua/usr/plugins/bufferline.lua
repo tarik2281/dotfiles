@@ -15,9 +15,12 @@ return {
 				offsets = {
 					{
 						filetype = "NvimTree",
-						text = "",
 						highlight = "Directory",
-						separator = true, -- use a "true" to enable the default, or set your own character
+						separator = true,
+						text_align = "left",
+						text = function()
+							return vim.fn.getcwd()
+						end,
 					},
 				},
 			},
