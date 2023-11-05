@@ -1,12 +1,21 @@
+#!/usr/bin/env zsh
+
+if command -v brew &> /dev/null; then
+    brew_prefix=$(brew --prefix)
+
+    export PATH="$brew_prefix/opt/libpq/bin:$PATH"
+    export PATH="$brew_prefix/opt/coreutils/libexec/gnubin:$PATH"
+    export PATH="$brew_prefix/opt/gnu-sed/libexec/gnubin:$PATH"
+
+    fpath=("$brew_prefix/share/zsh/site-functions" $fpath)
+fi
+
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
 [[ -z "$ZSH" ]] && export ZSH="${${(%):-%x}:a:h}"
 
-fpath=("$ZSH/completions" "$(brew --prefix)/share/zsh/site-functions" $fpath)
+fpath=("$ZSH/completions" $fpath)
 
 autoload -U colors && colors
 autoload -U compaudit compinit zrecompile
@@ -24,12 +33,15 @@ source "${ZSH}/plugins/yq-repl/yq.plugin.zsh"
 # source "${ZSH}/plugins/jq-zsh-plugin/jq.plugin.zsh"
 source "${ZSH}/plugins/zsh-z/zsh-z.plugin.zsh"
 
-eval "$(rtx activate zsh)"
+if command -v rtx &> /dev/null; then
+    eval "$(rtx activate zsh)" 
+fi
 
 if [[ -f "${ZSH}/cache/.zcompdump" ]]; then
   compinit -C -i -d "${ZSH}/cache/.zcompdump"
 else
   compinit -i -d "${ZSH}/cache/.zcompdump"
+  zcompile "${ZSH}/cache/.zcompdump"
 fi
 
 source "${ZSH}/plugins/zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh"
@@ -43,8 +55,5 @@ zstyle ':completion:*:zshz:*' sort false
 
 source "${ZSH}/plugins/gradle/gradle.plugin.zsh"
 source "${ZSH}/aliases.zsh"
+source "${ZSH}/functions.zsh"
 
-timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-}
