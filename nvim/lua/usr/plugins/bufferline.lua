@@ -4,11 +4,16 @@ return {
 	version = "*",
 	config = function()
 		local bufferline = require("bufferline")
+		local catppuccin = require("catppuccin.groups.integrations.bufferline")
 
 		bufferline.setup({
 			options = {
 				separator_style = "slant",
+				numbers = function(opts)
+					return string.format("%s", opts.ordinal)
+				end,
 			},
+			highlights = catppuccin.get(),
 		})
 
 		vim.keymap.set("n", "<A-1>", function()
