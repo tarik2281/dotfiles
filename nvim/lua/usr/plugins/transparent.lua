@@ -1,12 +1,12 @@
 return {
-    "xiyaowong/transparent.nvim",
-    config = function()
-        local transparent = require("transparent")
+	"xiyaowong/transparent.nvim",
+	config = function()
+		local transparent = require("transparent")
 
-        transparent.setup({
-            extra_groups = {
-                "NvimTreeNormal",
-            },
-        })
-    end,
+		transparent.setup({
+			extra_groups = {
+				"NvimTreeNormal",
+			},
+		})
+	end,
 }

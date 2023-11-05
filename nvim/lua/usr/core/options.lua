@@ -6,7 +6,7 @@ vim.opt.ruler = false
 
 vim.opt.cursorline = true
 
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = "yes"
 
 -- indentation
 vim.opt.expandtab = true
@@ -30,3 +30,5 @@ vim.opt.showmode = false
 vim.opt.termguicolors = true
 
 vim.opt.swapfile = false
+
+vim.opt.background = "dark"
