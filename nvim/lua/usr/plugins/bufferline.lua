@@ -1,0 +1,50 @@
+return {
+	"akinsho/bufferline.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	version = "*",
+	config = function()
+		local bufferline = require("bufferline")
+
+		bufferline.setup({
+			options = {
+				separator_style = "slant",
+			},
+		})
+
+		vim.keymap.set("n", "<A-1>", function()
+			bufferline.go_to(1, true)
+		end, { desc = "Go to buffer 1" })
+
+		vim.keymap.set("n", "<A-2>", function()
+			bufferline.go_to(2, true)
+		end, { desc = "Go to buffer 2" })
+
+		vim.keymap.set("n", "<A-3>", function()
+			bufferline.go_to(3, true)
+		end, { desc = "Go to buffer 3" })
+
+		vim.keymap.set("n", "<A-4>", function()
+			bufferline.go_to(4, true)
+		end, { desc = "Go to buffer 4" })
+
+		vim.keymap.set("n", "<A-5>", function()
+			bufferline.go_to(5, true)
+		end, { desc = "Go to buffer 5" })
+
+		vim.keymap.set("n", "<A-6>", function()
+			bufferline.go_to(6, true)
+		end, { desc = "Go to buffer 6" })
+
+		vim.keymap.set("n", "<A-7>", function()
+			bufferline.go_to(7, true)
+		end, { desc = "Go to buffer 7" })
+
+		vim.keymap.set("n", "<A-8>", function()
+			bufferline.go_to(8, true)
+		end, { desc = "Go to buffer 8" })
+
+		vim.keymap.set("n", "<A-9>", function()
+			bufferline.go_to(9, true)
+		end, { desc = "Go to buffer 9" })
+	end,
+}
