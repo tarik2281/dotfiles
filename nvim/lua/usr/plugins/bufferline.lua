@@ -8,10 +8,18 @@ return {
 
 		bufferline.setup({
 			options = {
-				separator_style = "slant",
+				-- separator_style = "slant",
 				numbers = function(opts)
 					return string.format("%s", opts.ordinal)
 				end,
+				offsets = {
+					{
+						filetype = "NvimTree",
+						text = "",
+						highlight = "Directory",
+						separator = true, -- use a "true" to enable the default, or set your own character
+					},
+				},
 			},
 			highlights = catppuccin.get(),
 		})
@@ -51,5 +59,7 @@ return {
 		vim.keymap.set("n", "<A-9>", function()
 			bufferline.go_to(9, true)
 		end, { desc = "Go to buffer 9" })
+
+		vim.keymap.set("n", "<leader>bt", "<cmd>BufferLineTogglePin<CR>", { desc = "Toggle pin for current buffer" })
 	end,
 }

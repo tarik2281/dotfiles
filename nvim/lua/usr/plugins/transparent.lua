@@ -8,5 +8,7 @@ return {
 				"NvimTreeNormal",
 			},
 		})
+
+		transparent.clear_prefix("BufferLine")
 	end,
 }
