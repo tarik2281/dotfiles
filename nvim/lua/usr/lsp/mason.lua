@@ -28,6 +28,7 @@ return {
 			-- list of servers for mason to install
 			ensure_installed = {
 				"gopls",
+				"bashls",
 				"tsserver",
 				"html",
 				"cssls",
@@ -51,6 +52,8 @@ return {
 				-- "pylint", -- python linter
 				"eslint_d", -- js linter
 				"goimports",
+				"shfmt",
+				"shellcheck",
 			},
 		})
 	end,

@@ -9,6 +9,7 @@ vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "Find 
 
 vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle <CR>", { desc = "Toggle NvimTree" })
 
-vim.keymap.set("n", "<C-u>", "<C-u>zz", {})
-vim.keymap.set("n", "<C-d>", "<C-d>zz", {})
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
 
+vim.keymap.set("n", "<leader>fx", "<cmd>!chmod +x %<CR>", { desc = "Make current file executable" })

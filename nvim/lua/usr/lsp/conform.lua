@@ -21,6 +21,9 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				go = { "goimports" },
+				bash = { "shfmt" },
+				sh = { "shfmt" },
+				zsh = { "shfmt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
