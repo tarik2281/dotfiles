@@ -15,5 +15,5 @@ if [ ! -f ~/.tmux.conf ]; then
 fi
 
 if [ ! -d ~/config/nvim ]; then
-	ln -s "$ROOT_DIR/.config/nvim" ~/.config/nvim || true
+	ln -s "$ROOT_DIR/nvim" ~/.config/nvim || true
 fi

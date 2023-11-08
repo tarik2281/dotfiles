@@ -57,6 +57,9 @@ alias gf="git fetch"
 alias gfa="git fetch --all"
 alias gl="git pull"
 alias gp="git push"
+alias gpt="git push --tags"
+alias gt="git tag"
+alias gtd="git tag -d"
 
 # docker
 
@@ -87,6 +90,7 @@ alias spg="sepoctl postgres"
 alias spf="sepoctl port-forward"
 alias sr="sepoctl restart"
 alias ss="sepoctl shell"
+alias sj="sepoctl jenkins ."
 
 # kubectl
 
@@ -111,4 +115,3 @@ alias klo="kubectl logs"
 alias kpf="kubectl port-forward"
 
 alias keti="kubectl exec -ti"
-
