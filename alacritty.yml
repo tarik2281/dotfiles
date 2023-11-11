@@ -1,0 +1,28 @@
+live_config_reload: true
+env:
+  TERM: xterm-256color
+window:
+  decorations: none
+  opacity: 0.8
+  blur: true
+  dynamic_padding: false
+  padding:
+    x: 19
+    y: 19
+font:
+  normal:
+    family: "MesloLGS NF"
+    style: Regular
+  italic:
+    family: "MesloLGS NF"
+    style: Italic
+  bold:
+    family: "MesloLGS NF"
+    style: Bold
+  bold_italic:
+    family: "MesloLGS NF"
+    style: Bold Italic
+  size: 11.0
+
+import:
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
