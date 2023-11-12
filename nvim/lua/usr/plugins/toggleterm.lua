@@ -26,7 +26,6 @@ return {
 		local shell = Terminal:new({
 			hidden = true,
 			on_open = function(term)
-				vim.api.nvim_buf_set_keymap(term.bufnr, "t", "jk", [[<C-\><C-n>]], { noremap = true, silent = true })
 				vim.api.nvim_buf_set_keymap(
 					term.bufnr,
 					"t",
@@ -76,9 +75,9 @@ return {
 
 		function _G.set_terminal_keymaps()
 			local opts = { buffer = 0 }
-			vim.keymap.set("t", "jk", [[<C-\><C-n>]], opts)
+			vim.keymap.set("t", "<C-x>", [[<C-\><C-n>]], opts)
 		end
 
-		vim.cmd("autocmd! TermOpen term:// lua set_terminal_keymaps()")
+		vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 	end,
 }
