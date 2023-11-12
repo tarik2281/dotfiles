@@ -1,5 +1,12 @@
 #!/usr/bin/env zsh
 
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+# setopt appendhistory
+# setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY_TIME
+
 if command -v brew &> /dev/null; then
     brew_prefix=$(brew --prefix)
 
