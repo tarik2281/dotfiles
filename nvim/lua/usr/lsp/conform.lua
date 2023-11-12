@@ -23,7 +23,6 @@ return {
 				go = { "goimports" },
 				bash = { "shfmt" },
 				sh = { "shfmt" },
-				zsh = { "shfmt" },
 				java = { "palantir-java-format" },
 			},
 			format_on_save = {
