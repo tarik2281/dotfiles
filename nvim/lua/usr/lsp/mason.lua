@@ -30,6 +30,7 @@ return {
 				"gopls",
 				"jdtls",
 				"bashls",
+				"gradle_ls",
 				"tsserver",
 				"html",
 				"cssls",
