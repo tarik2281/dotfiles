@@ -62,6 +62,7 @@ alias gp="git push"
 alias gpt="git push --tags"
 alias gt="git tag"
 alias gtd="git tag -d"
+alias lg="lazygit"
 
 # docker
 

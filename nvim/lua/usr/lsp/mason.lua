@@ -31,6 +31,7 @@ return {
 				"jdtls",
 				"bashls",
 				"gradle_ls",
+				"dockerls",
 				"tsserver",
 				"html",
 				"cssls",
