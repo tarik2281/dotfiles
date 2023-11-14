@@ -16,6 +16,7 @@ sudo dnf install -y ripgrep
 sudo dnf install -y fzf
 sudo dnf install -y httpie
 sudo dnf install -y gcc-c++
+sudo dnf install -y gh
 
 sudo dnf install -y dnf-plugins-core
 sudo dnf config-manager --add-repo https://rtx.pub/rpm/rtx.repo
