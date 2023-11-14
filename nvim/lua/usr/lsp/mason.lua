@@ -57,6 +57,8 @@ return {
 				"goimports",
 				"shfmt",
 				"shellcheck",
+				"markdownlint",
+				"mdformat",
 			},
 		})
 	end,
