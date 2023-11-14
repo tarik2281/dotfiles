@@ -49,6 +49,9 @@ return {
 			on_close = function(term)
 				vim.cmd("startinsert!")
 			end,
+			float_opts = {
+				border = "none",
+			},
 		})
 
 		function _shell_toggle()
