@@ -8,6 +8,10 @@ vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Find
 vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "Find recently opened files" })
 vim.keymap.set("n", "<leader>ft", "<cmd>Telescope filetypes<CR>", { desc = "Set filetype" })
 
+vim.keymap.set("n", "<leader>dv", "<cmd>DiffviewOpen<CR>", { desc = "Open diffview" })
+vim.keymap.set("n", "<leader>df", "<cmd>DiffviewFileHistory %<CR>", { desc = "History for current file" })
+vim.keymap.set("n", "<leader>dc", "<cmd>DiffviewClose<CR>", { desc = "Close diffview" })
+
 vim.keymap.set("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>bd", "<cmd>bp <bar>bd #<CR>", { desc = "Close current buffer" })
