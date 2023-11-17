@@ -38,7 +38,7 @@ link_file ".config/nvim"
 link_file ".config/alacritty"
 link_file ".config/lazygit"
 
-if [ "$OSTYPE" = "darwin" ]; then
+if [[ "$OSTYPE" =~ ^darwin ]]; then
 	link_file ".config/yabai"
 	link_file ".config/skhd"
 fi
