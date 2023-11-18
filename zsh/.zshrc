@@ -51,6 +51,8 @@ else
   zcompile "${ZSH}/cache/.zcompdump"
 fi
 
+zstyle ':completion:*' matcher-list 'r:|?=**'
+
 source "${ZSH}/plugins/zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh"
 
 source "${ZSH}/plugins/fzf-tab/fzf-tab.plugin.zsh"
