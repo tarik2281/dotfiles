@@ -32,6 +32,8 @@ return {
 				"bashls",
 				"gradle_ls",
 				"dockerls",
+				-- "groovyls",
+				-- "helm_ls",
 				"tsserver",
 				"html",
 				"cssls",

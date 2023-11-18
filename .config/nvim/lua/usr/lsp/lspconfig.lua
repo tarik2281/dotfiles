@@ -49,6 +49,19 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- lspconfig["groovyls"].setup({
+		-- 	cmd = { "groovy-language-server" },
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
+
+		-- lspconfig["helm_ls"].setup({
+		-- 	filetypes = { "helm" },
+		-- 	cmd = { "helm_ls", "serve" },
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
+
 		lspconfig["yamlls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
