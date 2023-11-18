@@ -1,0 +1,15 @@
+let mapleader = " "
+
+set incsearch
+
+map <leader>ff <Action>(GotoFile)
+map <leader>fg <Action>(FindInPath)
+
+map <C-u> <C-u>zz
+map <C-d> <C-d>zz
+
+map gi <Action>(GotoImplementation)
+
+set easymotion
+
+map s <Plug>(easymotion-prefix)

@@ -34,6 +34,7 @@ if [ ! -d ~/.tmux/plugins/tpm ]; then
 fi
 
 link_file ".tmux.conf"
+link_file ".ideavimrc"
 link_file ".config/nvim"
 link_file ".config/alacritty"
 link_file ".config/lazygit"
