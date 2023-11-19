@@ -118,3 +118,5 @@ alias klo="kubectl logs"
 alias kpf="kubectl port-forward"
 
 alias keti="kubectl exec -ti"
+
+# alias tl="tldr --list | fzf --preview 'tldr {} --color always' | xargs tldr"

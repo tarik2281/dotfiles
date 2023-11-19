@@ -17,6 +17,7 @@ sudo dnf install -y fzf
 sudo dnf install -y httpie
 sudo dnf install -y gcc-c++
 sudo dnf install -y gh
+sudo dnf install -y tldr
 
 sudo dnf install -y dnf-plugins-core
 sudo dnf config-manager --add-repo https://rtx.pub/rpm/rtx.repo
@@ -30,6 +31,9 @@ dockerd-rootless-setuptool.sh install
 
 # with root privileges
 sudo usermod -aG docker $USER
+
+# sudo systemctl start docker
+# sudo systemctl stop docker.service docker.socket
 
 sudo dnf install -y qemu-kvm libvirt virt-install bridge-utils
 sudo dnf install -y virt-manager
@@ -45,6 +49,10 @@ sudo yum groupinstall -y 'Development Tools'
 ) >>/home/karaca/.zshrc
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew install gcc
+
+brew install k9s
+brew install k3d
+brew install kubectl
 
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 
