@@ -49,6 +49,11 @@ return {
 			on_close = function(term)
 				vim.cmd("startinsert!")
 			end,
+			highlights = {
+				NormalFloat = {
+					guibg = "none",
+				},
+			},
 			float_opts = {
 				border = "none",
 			},
