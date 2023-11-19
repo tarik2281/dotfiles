@@ -24,5 +24,13 @@ font:
     style: Bold Italic
   size: 11.0
 
+key_bindings:
+  - key: Left
+    mods: Alt
+    chars: "\eb"
+  - key: Right
+    mods: Alt
+    chars: "\ef"
+
 import:
   - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
