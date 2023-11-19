@@ -15,3 +15,4 @@
 - folke/trouble.nvim
 - github/copilot.vim
 - rcarriga/nvim-dap-ui
+- wilder.nvim

@@ -22,6 +22,15 @@ sudo dnf install -y dnf-plugins-core
 sudo dnf config-manager --add-repo https://rtx.pub/rpm/rtx.repo
 sudo dnf install -y rtx
 
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# rootless
+dockerd-rootless-setuptool.sh install
+
+# with root privileges
+sudo usermod -aG docker $USER
+
 sudo dnf install -y qemu-kvm libvirt virt-install bridge-utils
 sudo dnf install -y virt-manager
 
