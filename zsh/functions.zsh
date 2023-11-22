@@ -8,3 +8,13 @@ zshclearcompletions() {
 	rm -f "${ZSH}/cache/.zcompdump.zwc"
 	zshreload
 }
+
+yaml() {
+	file=$1
+	yq -o=yaml "$file" -C | less -r
+}
+
+json() {
+	file=$1
+	yq -o=json "$file" -C | less -r
+}
