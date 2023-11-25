@@ -5,22 +5,22 @@ window:
   decorations: none
   opacity: 0.8
   blur: true
-  dynamic_padding: false
+  dynamic_padding: true
   padding:
     x: 19
-    y: 19
+    y: 16
 font:
   normal:
-    family: "MesloLGS NF"
+    family: "MesloLGS Nerd Font Mono"
     style: Regular
   italic:
-    family: "MesloLGS NF"
+    family: "MesloLGS Nerd Font Mono"
     style: Italic
   bold:
-    family: "MesloLGS NF"
+    family: "MesloLGS Nerd Font Mono"
     style: Bold
   bold_italic:
-    family: "MesloLGS NF"
+    family: "MesloLGS Nerd Font Mono"
     style: Bold Italic
   size: 11.0
 
