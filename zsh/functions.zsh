@@ -11,10 +11,22 @@ zshclearcompletions() {
 
 yaml() {
 	file=$1
-	yq -o=yaml "$file" -C | less -r
+	if [ "$file" = "-" ]; then
+		yq -o=yaml < /dev/stdin | nvim -c "set filetype=yaml"
+		# yq -o=yaml -C < /dev/stdin | less -r
+	else
+		yq -o=yaml "$file" | nvim -c "set filetype=yaml"
+	    # yq -o=yaml "$file" -C | less -r
+	fi
 }
 
 json() {
 	file=$1
-	yq -o=json "$file" -C | less -r
+	if [ "$file" = "-" ]; then
+		yq -o=json < /dev/stdin | nvim -c "set filetype=json"
+		# yq -o=json -C < /dev/stdin | less -r
+	else
+		yq -o=json "$file" | nvim -c "set filetype=json"
+	    # yq -o=json "$file" -C | less -r
+	fi
 }

@@ -29,6 +29,8 @@ vim.keymap.set("n", "L", "zL", { desc = "Half page right" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "Next occurrence" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous occurrence" })
 
+vim.keymap.set("i", "jj", "<Esc>")
+
 vim.keymap.set("x", "<leader>p", '"_dP')
 vim.keymap.set({ "n", "v" }, "<C-p>", '"+p', { desc = "Paste from system clipboard" })
 -- vim.keymap.set({ "n", "v" }, "<C-P>", '"+P')
