@@ -7,7 +7,6 @@ vim.opt.ruler = false
 vim.opt.cursorline = true
 
 vim.opt.signcolumn = "yes"
-vim.opt.winbar = " "
 
 -- indentation
 vim.opt.expandtab = true
