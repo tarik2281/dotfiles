@@ -7,6 +7,14 @@ set relativenumber
 set incsearch
 set notimeout
 
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+
+set ignorecase
+set smartcase
+
 let g:WhichKey_ShowVimActions = "true"
 
 Plug 'machakann/vim-highlightedyank'
@@ -45,8 +53,10 @@ map <C-e> <Action>(ShowBookmarks)
 
 map <leader>i <Action>(ImplementMethods)
 map <leader>o <Action>(OverrideMethods)
+map <leader>u <Action>(Generate)
 map gb <Action>(GotoSuperMethod)
 map gi <Action>(GotoImplementation)
+map gu <Action>(ShowUsages)
 map s <Plug>(easymotion-prefix)
 
 imap jj <Esc>
