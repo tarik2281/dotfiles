@@ -36,6 +36,7 @@ return {
 				"vim",
 				"xml",
 				"yaml",
+				"zig",
 			},
 			modules = {},
 			ignore_install = {},
