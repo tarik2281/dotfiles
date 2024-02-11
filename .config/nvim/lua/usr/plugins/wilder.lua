@@ -1,5 +1,6 @@
 return {
 	"gelguy/wilder.nvim",
+	-- enabled = false,
 	config = function()
 		local wilder = require("wilder")
 
@@ -14,10 +15,7 @@ return {
 					-- found at https://github.com/nixprime/cpsm
 					filters = { "fuzzy_filter", "difflib_sorter" },
 				}),
-				wilder.cmdline_pipeline({
-					fuzzy = 1,
-					set_pcre2_pattern = 1,
-				}),
+				wilder.cmdline_pipeline(),
 				wilder.python_search_pipeline({
 					pattern = "fuzzy",
 				})
