@@ -17,10 +17,11 @@ if command -v brew &> /dev/null; then
     fpath=("$brew_prefix/share/zsh/site-functions" $fpath)
 fi
 
+[[ -z "$ZSH" ]] && export ZSH="${${(%):-%x}:a:h}"
+
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
-
-[[ -z "$ZSH" ]] && export ZSH="${${(%):-%x}:a:h}"
+export PATH="${ZSH}/bin:$PATH"
 
 fpath=("$ZSH/completions" $fpath)
 
@@ -74,3 +75,11 @@ export FZF_DEFAULT_OPTS=" \
 
 export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
+
+tmux-sessionizer-widget() {
+    tmux-sessionizer
+}
+
+zle -N tmux-sessionizer-widget
+
+bindkey ^f tmux-sessionizer-widget
