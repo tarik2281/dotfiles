@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
+set -e
+
+cd "$HOME"
+
 if [[ $# -eq 1 ]]; then
 	selected=$1
 else
 	if [ -n "$TMUX_SESSION_FIND_DIRS" ]; then
-		directories=$(find $TMUX_SESSION_FIND_DIRS -mindepth 1 -maxdepth 1 -type d)
+		directories=$(fd -td --exact-depth 1 . $TMUX_SESSION_FIND_DIRS)
 	fi
 
 	dirs=$(echo "$TMUX_SESSION_DIRS" | tr ":" "\n")
