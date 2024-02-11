@@ -11,18 +11,14 @@ return {
 
 		neodev.setup({})
 
-		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
 
-		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 		local on_attach = require("usr.core.lspkeymaps").on_attach
 
-		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
-		-- Change the Diagnostic symbols in the sign column (gutter)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
@@ -112,50 +108,47 @@ return {
 		-- 	on_attach = on_attach,
 		-- })
 
-		-- lspconfig["helm_ls"].setup({
-		-- 	filetypes = { "helm" },
-		-- 	cmd = { "helm_ls", "serve" },
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
-
-		lspconfig["yamlls"].setup({
+		lspconfig["helm_ls"].setup({
+			filetypes = { "helm" },
+			cmd = { "helm_ls", "serve" },
 			capabilities = capabilities,
 			on_attach = on_attach,
-			settings = {
-				yaml = {
-					schemas = {
-						kubernetes = "*.yaml",
-						["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
-						["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-						["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
-						["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
-						["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
-						["http://json.schemastore.org/ansible-playbook"] = "*play*.{yml,yaml}",
-						["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
-						["https://json.schemastore.org/dependabot-v2"] = ".github/dependabot.{yml,yaml}",
-						["https://json.schemastore.org/gitlab-ci"] = "*gitlab-ci*.{yml,yaml}",
-						["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] = "*api*.{yml,yaml}",
-						["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "*docker-compose*.{yml,yaml}",
-						["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] = "*flow*.{yml,yaml}",
-					},
-				},
-			},
 		})
 
-		-- configure html server
+		-- lspconfig["yamlls"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	-- settings = {
+		-- 	-- 	yaml = {
+		-- 	-- 		schemas = {
+		-- 	-- 			kubernetes = "*.yaml",
+		-- 	-- 			["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
+		-- 	-- 			["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+		-- 	-- 			["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
+		-- 	-- 			["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
+		-- 	-- 			["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
+		-- 	-- 			["http://json.schemastore.org/ansible-playbook"] = "*play*.{yml,yaml}",
+		-- 	-- 			["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+		-- 	-- 			["https://json.schemastore.org/dependabot-v2"] = ".github/dependabot.{yml,yaml}",
+		-- 	-- 			["https://json.schemastore.org/gitlab-ci"] = "*gitlab-ci*.{yml,yaml}",
+		-- 	-- 			["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] = "*api*.{yml,yaml}",
+		-- 	-- 			["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "*docker-compose*.{yml,yaml}",
+		-- 	-- 			["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] = "*flow*.{yml,yaml}",
+		-- 	-- 		},
+		-- 	-- 	},
+		-- 	-- },
+		-- })
+
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
-		-- configure typescript server with plugin
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
-		-- configure css server
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
@@ -191,24 +184,16 @@ return {
 		--     filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
 		-- })
 
-		-- configure emmet language server
 		lspconfig["emmet_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 		})
 
-		-- configure python server
-		lspconfig["pyright"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			settings = { -- custom settings for lua
+			settings = {
 				Lua = {
 					-- make the language server recognize "vim" global
 					diagnostics = {
