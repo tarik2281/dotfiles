@@ -38,7 +38,7 @@ link_file ".ideavimrc"
 link_file ".config/nvim"
 link_file ".config/alacritty"
 link_file ".config/lazygit"
-link_file ".config/k9s/skin.yml"
+link_file ".config/k9s"
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
 	link_file ".config/yabai"
