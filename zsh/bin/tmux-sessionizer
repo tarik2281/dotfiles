@@ -15,7 +15,9 @@ else
 
 	directories=$(printf "$directories\n%s" "$dirs")
 
-	selected=$(echo "$directories" | fzf)
+	selected=$(echo "$directories" | fzf-tmux)
+	# echo "$directories"
+	# exit 0
 fi
 
 if [[ -z $selected ]]; then

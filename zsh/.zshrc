@@ -76,10 +76,10 @@ export FZF_DEFAULT_OPTS=" \
 export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 
-tmux-sessionizer-widget() {
-    tmux-sessionizer
-}
-
-zle -N tmux-sessionizer-widget
-
-bindkey ^f tmux-sessionizer-widget
+# tmux-sessionizer-widget() {
+#     tmux-sessionizer
+# }
+#
+# zle -N tmux-sessionizer-widget
+#
+# bindkey ^f tmux-sessionizer-widget
