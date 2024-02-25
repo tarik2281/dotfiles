@@ -39,6 +39,7 @@ link_file ".config/nvim"
 link_file ".config/alacritty"
 link_file ".config/lazygit"
 link_file ".config/k9s"
+link_file ".config/yamlfmt"
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
 	link_file ".config/yabai"

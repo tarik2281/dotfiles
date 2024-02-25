@@ -16,7 +16,7 @@ return {
 				html = { "prettierd" },
 
 				json = { "prettierd" },
-				yaml = { "prettierd" },
+				yaml = { "yamlfmt" },
 
 				lua = { "stylua" },
 				go = { "goimports" },
