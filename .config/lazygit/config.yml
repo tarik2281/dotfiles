@@ -1,5 +1,11 @@
 gui:
+  windowSize: normal
   scrollHeight: 10
   nerdFontsVersion: "3"
   border: rounded
   showBottomLine: false
+keybinding:
+  universal:
+    nextTab: <c-e>
+    diffingMenu-alt: <c-a>
+    jumpToBlock: ["0", "1", "2", "3", "4"]

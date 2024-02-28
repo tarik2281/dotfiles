@@ -23,56 +23,39 @@ return {
 
 		local Terminal = require("toggleterm.terminal").Terminal
 
-		local shell = Terminal:new({
-			hidden = true,
-			on_open = function(term)
-				vim.api.nvim_buf_set_keymap(
-					term.bufnr,
-					"t",
-					"<A-i>",
-					"<cmd>close<CR>",
-					{ noremap = true, silent = true }
-				)
-			end,
-		})
-
-		local lazygit = Terminal:new({
-			cmd = "lazygit",
-			hidden = true,
-
-			-- function to run on opening the terminal
-			on_open = function(term)
-				vim.cmd("startinsert!")
-				vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
-			end,
-			-- function to run on closing the terminal
-			on_close = function(term)
-				vim.cmd("startinsert!")
-			end,
-			highlights = {
-				NormalFloat = {
-					guibg = "none",
-				},
-			},
-			float_opts = {
-				border = "none",
-			},
-		})
-
-		function _shell_toggle()
-			shell:toggle()
-		end
-
 		function _lazygit_toggle()
-			lazygit:toggle()
-		end
+			local lazygit = Terminal:new({
+				cmd = "lazygit",
+				hidden = true,
 
-		vim.keymap.set(
-			"n",
-			"<A-i>",
-			"<cmd>lua _shell_toggle()<CR>",
-			{ desc = "Open shell", noremap = true, silent = true }
-		)
+				on_open = function(term)
+					print("on_open")
+					vim.cmd("startinsert!")
+					vim.api.nvim_buf_set_keymap(
+						term.bufnr,
+						"n",
+						"q",
+						"<cmd>close<CR>",
+						{ noremap = true, silent = true }
+					)
+				end,
+
+				on_close = function(term)
+					vim.cmd("startinsert!")
+				end,
+
+				highlights = {
+					NormalFloat = {
+						guibg = "none",
+					},
+				},
+				float_opts = {
+					border = "none",
+				},
+			})
+
+			lazygit:open()
+		end
 
 		vim.keymap.set(
 			"n",
