@@ -42,6 +42,7 @@
 
 "else" @keyword
 "if" @keyword
+"else if" @keyword
 "range" @keyword
 "with" @keyword
 "end" @keyword
