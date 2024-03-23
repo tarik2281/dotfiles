@@ -1,8 +1,31 @@
 local jdtls = require("jdtls")
-local jdtls_dir = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
+local mason_registry = require("mason-registry")
+local jdtls_dir = mason_registry.get_package("jdtls"):get_install_path()
 local lombok_jar = jdtls_dir .. "/lombok.jar"
 
 local on_attach = require("usr.core.lspkeymaps").on_attach
+
+local debug_adapter_dir = mason_registry.get_package("java-debug-adapter"):get_install_path()
+local test_dir = mason_registry.get_package("java-test"):get_install_path()
+
+local bundles = {
+	vim.fn.glob(debug_adapter_dir .. "/extension/server/com.microsoft.java.debug.plugin-*.jar", 1),
+}
+
+vim.list_extend(bundles, vim.split(vim.fn.glob(test_dir .. "/extension/server/*.jar", 1), "\n"))
+
+vim.keymap.set("n", "<leader>rj", jdtls.pick_test, { desc = "Pick java test to run" })
+vim.keymap.set("n", "<leader>rr", function()
+	local dap = require("dap")
+
+	dap.run({
+		type = "java",
+		name = "Remote Debug",
+		request = "attach",
+		hostName = "127.0.0.1",
+		port = 5005,
+	})
+end, { desc = "Java Remote Debug" })
 
 local config = {
 	cmd = { jdtls_dir .. "/jdtls", "--jvm-arg=-javaagent:" .. lombok_jar },
@@ -11,6 +34,7 @@ local config = {
 	),
 	on_attach = on_attach,
 	init_options = {
+		bundles = bundles,
 		extendedClientCapabilities = jdtls.extendedClientCapabilities,
 	},
 	settings = {
@@ -36,5 +60,7 @@ local config = {
 		},
 	},
 }
+
+-- require("jdtls.dap").setup_dap_main_class_configs()
 
 jdtls.start_or_attach(config)
