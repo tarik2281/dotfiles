@@ -27,28 +27,28 @@ return {
 			ui.nav_file(4)
 		end, { desc = "Navigate to harpoon file 4" })
 
-		vim.keymap.set("n", "<A-5>", function()
-			ui.nav_file(5)
-		end, { desc = "Navigate to harpoon file 5" })
-
-		vim.keymap.set("n", "<A-6>", function()
-			ui.nav_file(6)
-		end, { desc = "Navigate to harpoon file 6" })
-
-		vim.keymap.set("n", "<A-7>", function()
-			ui.nav_file(7)
-		end, { desc = "Navigate to harpoon file 7" })
-
-		vim.keymap.set("n", "<A-8>", function()
-			ui.nav_file(8)
-		end, { desc = "Navigate to harpoon file 8" })
-
-		vim.keymap.set("n", "<A-9>", function()
-			ui.nav_file(9)
-		end, { desc = "Navigate to harpoon file 9" })
-
-		vim.keymap.set("n", "<A-0>", function()
-			ui.nav_file(10)
-		end, { desc = "Navigate to harpoon file 10" })
+		-- vim.keymap.set("n", "<A-5>", function()
+		-- 	ui.nav_file(5)
+		-- end, { desc = "Navigate to harpoon file 5" })
+		--
+		-- vim.keymap.set("n", "<A-6>", function()
+		-- 	ui.nav_file(6)
+		-- end, { desc = "Navigate to harpoon file 6" })
+		--
+		-- vim.keymap.set("n", "<A-7>", function()
+		-- 	ui.nav_file(7)
+		-- end, { desc = "Navigate to harpoon file 7" })
+		--
+		-- vim.keymap.set("n", "<A-8>", function()
+		-- 	ui.nav_file(8)
+		-- end, { desc = "Navigate to harpoon file 8" })
+		--
+		-- vim.keymap.set("n", "<A-9>", function()
+		-- 	ui.nav_file(9)
+		-- end, { desc = "Navigate to harpoon file 9" })
+		--
+		-- vim.keymap.set("n", "<A-0>", function()
+		-- 	ui.nav_file(10)
+		-- end, { desc = "Navigate to harpoon file 10" })
 	end,
 }

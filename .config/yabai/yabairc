@@ -24,15 +24,17 @@ yabai -m config mouse_action2 resize
 yabai -m mouse_drop_action swap
 
 yabai -m rule --add app="^System.*­einstellungen$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Vorschau$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
 yabai -m rule --add app="^KeePassXC$" sticky=on layer=above manage=off
 yabai -m rule --add app="^iTerm2$" space=1
 yabai -m rule --add app="^Obsidian$" manage=on space=5
 yabai -m rule --add app="^Spotify$" manage=on space=6
-yabai -m rule --add app="^YouTube$" manage=on space=6
+yabai -m rule --add app="^YouTube$" manage=on space=7
 yabai -m rule --add app="^Microsoft Outlook$" manage=off
 yabai -m rule --add app="^Microsoft Teams" manage=off
 yabai -m rule --add app="^IntelliJ IDEA$" manage=off
-yabai -m rule --add app="^IntelliJ IDEA$" title="^sepo-release" manage=on space=2
+yabai -m rule --add app="^IntelliJ IDEA$" title="^sepo " manage=on space=2
 yabai -m rule --add app="^IntelliJ IDEA$" title="^mf-eai" manage=on space=4
 yabai -m rule --add app="^Rechner$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off

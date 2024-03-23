@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.keymap.set("n", "<leader>fw", "<cmd>Telescope workspaces<CR>", { desc = "Find workspaces" })
+vim.keymap.set("n", "<leader>fr", "<cmd>Telescope resume<CR>", { desc = "Resume last search" })
 vim.keymap.set("n", "<leader>fa", "<cmd>Telescope find_files<CR>", { desc = "Find files" })
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope git_files<CR>", { desc = "Find files" })
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Live grep" })
@@ -9,6 +11,12 @@ vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Find
 vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "Find recently opened files" })
 vim.keymap.set("n", "<leader>ft", "<cmd>Telescope filetypes<CR>", { desc = "Set filetype" })
 vim.keymap.set("n", "<leader>fy", "<cmd>Telescope yaml_schema<CR>", { desc = "Set yaml schema" })
+vim.keymap.set(
+	"n",
+	"<leader>fs",
+	"<cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
+	{ desc = "Dynamic workspace symbols" }
+)
 
 vim.keymap.set("n", "<leader>dv", "<cmd>DiffviewOpen<CR>", { desc = "Open diffview" })
 vim.keymap.set("n", "<leader>df", "<cmd>DiffviewFileHistory<CR>", { desc = "Open diffview for history" })
@@ -42,3 +50,9 @@ vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Yank into system clipboard" })
 -- vim.keymap.set("v", "<leader>d", '"_d')
 
 vim.keymap.set("n", "<leader>fx", "<cmd>!chmod +x %<CR>", { desc = "Make current file executable" })
+
+vim.keymap.set("n", "<leader>ee", "oif err != nil {\nreturn err\n}\n<Esc>")
+vim.keymap.set("n", "<leader>ssd", "<cmd>%!sepoctl seal -d<CR>", { desc = "Seal secret for dev" })
+vim.keymap.set("n", "<leader>ssl", "<cmd>%!sepoctl seal<CR>", { desc = "Seal secret for local" })
+vim.keymap.set("n", "<leader>sud", "<cmd>%!sepoctl seal -d -u<CR>", { desc = "Unseal secret for dev" })
+vim.keymap.set("n", "<leader>sul", "<cmd>%!sepoctl seal -u<CR>", { desc = "Unseal secret for local" })

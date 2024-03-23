@@ -66,6 +66,15 @@ return {
 					},
 				},
 			},
+			pickers = {
+				buffers = {
+					mappings = {
+						i = {
+							["<c-x>"] = actions.delete_buffer + actions.move_to_top,
+						},
+					},
+				},
+			},
 		})
 
 		telescope.load_extension("fzf")
