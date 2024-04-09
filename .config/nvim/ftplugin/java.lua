@@ -3,6 +3,9 @@ local mason_registry = require("mason-registry")
 local jdtls_dir = mason_registry.get_package("jdtls"):get_install_path()
 local lombok_jar = jdtls_dir .. "/lombok.jar"
 
+local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+local workspace_dir = vim.loop.os_homedir() .. "/.jdtls/" .. project_name
+
 local on_attach = require("usr.core.lspkeymaps").on_attach
 
 local debug_adapter_dir = mason_registry.get_package("java-debug-adapter"):get_install_path()
@@ -28,7 +31,7 @@ vim.keymap.set("n", "<leader>rr", function()
 end, { desc = "Java Remote Debug" })
 
 local config = {
-	cmd = { jdtls_dir .. "/jdtls", "--jvm-arg=-javaagent:" .. lombok_jar },
+	cmd = { jdtls_dir .. "/jdtls", "--jvm-arg=-javaagent:" .. lombok_jar, "-data", workspace_dir },
 	root_dir = vim.fs.dirname(
 		vim.fs.find({ "gradlew", ".git", "mvnw", "settings.gradle", "pom.xml" }, { upward = true })[1]
 	),
