@@ -11,6 +11,7 @@ local homeDir = vim.loop.os_homedir()
 local tmuxSessionDirs
 
 local find_dirs = function(opts)
+	opts = opts or {}
 	if not tmuxSessionDirs then
 		local dirs = os.getenv("TMUX_SESSION_FIND_DIRS")
 		tmuxSessionDirs = vim.split(dirs, " ")
@@ -44,6 +45,8 @@ local find_dirs = function(opts)
 		:find()
 end
 
-return require("telescope").register_extension({
-	exports = { workspaces = find_dirs },
-})
+-- return require("telescope").register_extension({
+-- 	exports = { workspaces = find_dirs },
+-- })
+
+vim.keymap.set("n", "<leader>fw", find_dirs, { desc = "Find workspaces" })
