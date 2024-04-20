@@ -26,7 +26,9 @@ sudo dnf install -y neofetch
 sudo dnf install -y skopeo
 
 sudo dnf install -y keepassxc
+
 sudo dnf install -y dante-server
+# sudo systemctl start sockd
 
 sudo dnf install -y dnf-plugins-core
 
