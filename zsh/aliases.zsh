@@ -2,7 +2,7 @@
 
 alias ls="ls --color=auto"
 alias ll="ls -l"
-alias la="ls -la"
+alias la="ls -lah"
 
 alias h='history'
 alias hs='history | grep'
@@ -75,6 +75,8 @@ alias drmia="docker rmi -f \$(docker images -aq)"
 alias n="nerdctl"
 alias nk="nerdctl -n k8s.io"
 alias nco="nerdctl compose"
+
+alias rlm="go-release-manager"
 
 # sepoctl
 
