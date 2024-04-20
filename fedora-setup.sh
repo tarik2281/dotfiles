@@ -2,9 +2,10 @@
 
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 
-sudo dnf install -y akmod-nvidia
 sudo dnf install -y gnome-tweaks
 sudo dnf install -y gnome-extensions-app
+
+sudo dnf install -y akmod-nvidia
 sudo dnf install -y solaar
 sudo dnf install -y google-chrome-stable
 sudo dnf install -y zsh
@@ -14,23 +15,33 @@ sudo dnf install -y util-linux-user
 sudo dnf install -y neovim python3-neovim
 sudo dnf install -y ripgrep
 sudo dnf install -y fzf
+sudo dnf install -y tmux
+sudo dnf install -y fd-find
 sudo dnf install -y httpie
 sudo dnf install -y gcc-c++
 sudo dnf install -y gh
-sudo dnf install -y tldr
+sudo dnf install -y wireshark
+sudo dnf install -y htop
+sudo dnf install -y neofetch
+sudo dnf install -y skopeo
+
+sudo dnf install -y keepassxc
+sudo dnf install -y dante-server
 
 sudo dnf install -y dnf-plugins-core
-sudo dnf config-manager --add-repo https://rtx.pub/rpm/rtx.repo
-sudo dnf install -y rtx
+
+sudo dnf config-manager --add-repo https://mise.jdx.dev/rpm/mise.repo
+sudo dnf install -y mise
 
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # rootless
-dockerd-rootless-setuptool.sh install
+# dockerd-rootless-setuptool.sh install
 
 # with root privileges
 sudo usermod -aG docker $USER
+sudo usermod -aG wireshark $USER
 
 # sudo systemctl start docker
 # sudo systemctl stop docker.service docker.socket
@@ -46,24 +57,33 @@ sudo yum groupinstall -y 'Development Tools'
 (
 	echo
 	echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"'
-) >>/home/karaca/.zshrc
+) >>"$HOME/.zshrc"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew install gcc
 
+brew install yq
+brew install tlrc
+brew install lazygit
+brew install kubectl
+brew install kubectx
+brew install helm
 brew install k9s
 brew install k3d
-brew install kubectl
+brew install cilium-cli
 
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+pip3 install --user pynvim
 
-rtx install node@18
-rtx use -g node@18
+mise install node@18
+mise use -g node@18
 
-rtx install go@1.21
-rtx use -g go@1.21
+mise install go@1.21
+mise use -g go@1.21
 
-rtx install java@corretto-17
-rtx use -g java@corretto-17
+mise install java@corretto-17
+mise use -g java@corretto-17
+
+mise install rust
+mise use -g rust
 
 chsh -s $(which zsh)
 
