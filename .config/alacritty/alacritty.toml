@@ -42,3 +42,15 @@ opacity = 0.85
 [window.padding]
 x = 19
 y = 16
+
+[colors.normal]
+magenta = "#b38da8"
+white = "#ffffff"
+
+[colors.bright]
+magenta = "#b38da8"
+white = "#ffffff"
+
+[colors.dim]
+magenta = "#b38da8"
+white = "#ffffff"

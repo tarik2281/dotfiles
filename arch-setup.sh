@@ -39,9 +39,8 @@ sudo mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.
 
 timedatectl set-timezone Europe/Berlin
 
-yay -Syu
-
 yay -Sy archlinux-keyring
+yay -Syu
 
 yay -S \
 	alacritty \
@@ -102,7 +101,15 @@ yay -S \
 	qalculate-gtk \
 	hyprlock \
 	hypridle \
-	libvips
+	libvips \
+	rsync \
+	kubectl \
+	kubectx \
+	helm \
+	cilium-cli \
+	k3d \
+	go-task-bin \
+	kubeseal
 
 mise use -g node@20
 mise use -g node@corretto-17
