@@ -109,7 +109,8 @@ yay -S \
 	cilium-cli \
 	k3d \
 	go-task-bin \
-	kubeseal
+	kubeseal \
+	noto-fonts-emoji
 
 mise use -g node@20
 mise use -g node@corretto-17
