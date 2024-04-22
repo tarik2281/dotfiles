@@ -5,3 +5,4 @@ allow_images=true
 key_down=Ctrl-j
 key_up=Ctrl-k
 hide_scroll=true
+single_click=true

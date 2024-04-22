@@ -10,6 +10,10 @@ return {
 
 		local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
+		vim.filetype.add({
+			pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+		})
+
 		parser_config["gotmpl"] = {
 			install_info = {
 				url = "https://github.com/ngalaiko/tree-sitter-go-template",

@@ -52,8 +52,9 @@
 @define-color crust-rgb  rgb(17, 17, 27);
 
 * {
-  /* font-family: "Inconsolata Nerd Font", monospace; */
   font-family: "Ubuntu Nerd Font";
+  /* font-weight: 500; */
+  /* font-family: "Cantarell"; */
   font-size: 16px;
 }
 
@@ -90,15 +91,12 @@ window {
   border-radius: 10px;
   color: @text;
   background-color: @base;
+  box-shadow: none;
 }
 
 #input image {
   border: none;
-  /* color: @red; */
-}
-
-#input * {
-  outline: 4px solid @red!important;
+  -gtk-icon-transform: scaleX(0);
 }
 
 #text {
@@ -109,12 +107,14 @@ window {
 
 #entry {
   background-color: @base;
-  border: 0.11em solid @base;
+  /* padding: 10px; */
+  border: 0 solid transparent;
   border-radius: 10px;
+  outline: 0;
 }
 
-#entry #text #image {
-  margin: 20px;
+#entry #img {
+  padding: 10px;
 }
 
 #entry arrow {
@@ -123,14 +123,11 @@ window {
 }
 
 #entry:selected {
-  border: 0.11em solid @lavender;
+  border: 0 solid transparent;
   border-radius: 10px;
+  background-color: rgba(203, 166, 247, 0.15);
 }
 
 #entry:selected #text {
   color: @mauve;
-}
-
-#entry:drop(active) {
-  background-color: @lavender!important;
 }

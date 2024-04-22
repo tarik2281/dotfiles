@@ -99,7 +99,10 @@ yay -S \
 	bottom \
 	gtk-engine-murrine \
 	gnome-themes-extra \
-	qalculate-gtk
+	qalculate-gtk \
+	hyprlock \
+	hypridle \
+	libvips
 
 mise use -g node@20
 mise use -g node@corretto-17
@@ -116,3 +119,4 @@ gh auth login
 sudo ln -s /usr/bin/alacritty /usr/bin/xterm
 sudo usermod -aG docker "$USER"
 sudo usermod -aG wireshark "$USER"
+sudo systemctl enable --now libvirtd.socket

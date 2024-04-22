@@ -14,7 +14,7 @@ local opts = {
 	},
 	{
 		title = "\tLock",
-		exec = "nwg-look",
+		exec = "hyprlock",
 	},
 	{
 		title = "\tSleep",
