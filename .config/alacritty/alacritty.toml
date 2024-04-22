@@ -1,0 +1,44 @@
+import = ["/home/karaca/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
+live_config_reload = true
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "MesloLGS Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "MesloLGS Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "MesloLGS Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "MesloLGS Nerd Font"
+style = "Regular"
+
+[[keyboard.bindings]]
+chars = "\u001Bb"
+key = "Left"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bf"
+key = "Right"
+mods = "Alt"
+
+[window]
+blur = true
+decorations = "none"
+dynamic_padding = true
+opacity = 0.85
+
+[window.padding]
+x = 19
+y = 16

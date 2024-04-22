@@ -1,0 +1,7 @@
+no_actions=true
+term=alacritty
+normal_window=true
+allow_images=true
+key_down=Ctrl-j
+key_up=Ctrl-k
+hide_scroll=true
