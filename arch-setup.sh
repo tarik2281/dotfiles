@@ -34,7 +34,7 @@ yay -S \
 # echo "options nvidia-drm modeset=1" >>/etc/modprobe.d/nvidia.conf
 echo "options nvidia-drm modeset=1" | sudo tee -a /etc/modprobe.d/nvidia.conf
 
-# add 'nvidia_drm.modeset=1" to options in /boot/loader/entries/arch.conf
+# add 'nvidia_drm.modeset=1 nvidia_drm.fbdev=1 nvidia.NVreg_PreserveVideoMemoryAllocations=1" to options in /boot/loader/entries/arch.conf
 # MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm) in /etc/mkinitcpio.conf
 
 sudo mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
@@ -71,6 +71,7 @@ yay -S \
 	network-manager-applet \
 	nm-connection-editor \
 	python-gobject \
+	python-pyqt6 \
 	qemu-desktop \
 	ripgrep \
 	ruby \
@@ -115,7 +116,8 @@ yay -S \
 	kubeseal \
 	noto-fonts-emoji \
 	spotify-launcher \
-	swayosd-git
+	swayosd-git \
+	firewalld
 
 mise use -g node@20
 mise use -g node@corretto-17
