@@ -1,0 +1,13 @@
+* {
+  font-family: "Ubuntu Nerd Font";
+  font-weight: 500;
+}
+
+image {
+  -gtk-icon-transform: scale(0.75);
+}
+
+box {
+  padding-left: 10px;
+  padding-right: 15px;
+}

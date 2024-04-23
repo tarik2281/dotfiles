@@ -4,8 +4,9 @@ alias ls="ls --color=auto"
 alias ll="ls -l"
 alias la="ls -lah"
 
-alias h='history'
-alias hs='history | grep'
+alias se="sudoedit"
+
+alias h='fc -l -r -1 -30'
 
 alias tree="tree -C"
 alias t="tree -C"
@@ -22,8 +23,7 @@ alias ta4="tree -C -L 4 -a"
 
 alias grep="grep --color=auto"
 
-alias vi="nvim"
-alias vim="nvim"
+alias e="nvim"
 
 alias zshrc="zsh -c \"cd \${ZSH} && nvim .zshrc\""
 alias zshalias="zsh -c \"cd \${ZSH} && nvim aliases.zsh\""
@@ -100,16 +100,21 @@ alias sj="sepoctl jenkins ."
 
 # kubectl
 
-alias kctx="kubectx"
+alias kx="kubectx"
 alias kns="kubens"
 
 alias k="kubectl"
 alias kg="kubectl get"
 alias kgp="kubectl get pods"
+alias kgpa="kubectl get pods -A"
 alias kgs="kubectl get services"
+alias kgsa="kubectl get services -A"
 alias kgi="kubectl get ingress"
+alias kgia="kubectl get ingress -A"
 alias kgc="kubectl get configmap"
+alias kgca="kubectl get configmap -A"
 alias kgd="kubectl get deployment"
+alias kgda="kubectl get deployment -A"
 alias kgn="kubectl get namespace"
 
 alias kd="kubectl describe"
@@ -122,4 +127,4 @@ alias kpf="kubectl port-forward"
 
 alias keti="kubectl exec -ti"
 
-# alias tl="tldr --list | fzf --preview 'tldr {} --color always' | xargs tldr"
+alias tl="tldr --list | fzf --preview 'tldr {} --color always' | xargs tldr"

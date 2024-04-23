@@ -45,3 +45,11 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
 	link_file ".config/yabai"
 	link_file ".config/skhd"
 fi
+
+if [ -f "/etc/arch-release" ]; then
+	link_file ".config/hypr"
+	link_file ".config/swayosd"
+	link_file ".config/waybar"
+	link_file ".config/wofi"
+	link_file ".config/spotify-launcher.conf"
+fi

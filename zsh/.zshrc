@@ -6,6 +6,7 @@ SAVEHIST=10000
 # setopt appendhistory
 # setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY_TIME
+setopt globdots
 
 if command -v brew &> /dev/null; then
     brew_prefix=$(brew --prefix)
@@ -76,10 +77,3 @@ export FZF_DEFAULT_OPTS=" \
 export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# tmux-sessionizer-widget() {
-#     tmux-sessionizer
-# }
-#
-# zle -N tmux-sessionizer-widget
-#
-# bindkey ^f tmux-sessionizer-widget

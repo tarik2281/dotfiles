@@ -9,13 +9,13 @@
     "gtk-layer-shell": true,
     "height": 35,
     "modules-left": [
-      "hyprland/workspaces"
+      "hyprland/workspaces",
+      "privacy"
     ],
     "modules-center": [
       "hyprland/window"
     ],
     "modules-right": [
-      "temperature",
       "cpu",
       "memory",
       "disk",
@@ -27,6 +27,9 @@
       "tray",
       "custom/power"
     ],
+    "privacy": {
+      "icon-spacing": 12
+    },
     "cpu": {
       "interval": 10,
       "format": "{}% ",
@@ -95,6 +98,7 @@
       "format": "{icon}    {volume}%",
       "format-muted": "    {volume}%",
       "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+      "scroll-step": 5.0,
       "max-volume": 140,
       "format-icons": [
         "",

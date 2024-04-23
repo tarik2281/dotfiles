@@ -4,11 +4,13 @@ set -e
 
 sudo pacman -S --needed git base-devel
 
-git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin
-makepkg -si
+if ! command -v yay >/dev/null; then
+	git clone https://aur.archlinux.org/yay-bin.git
+	cd yay-bin
+	makepkg -si
+fi
 
-sudo pacman -R hyprland
+sudo pacman -R hyprland || true
 
 yay -S \
 	nvidia-dkms \
@@ -48,6 +50,7 @@ yay -S \
 	dante \
 	dnsmasq \
 	docker \
+	docker-buildx \
 	fd \
 	fzf \
 	github-cli \
@@ -73,7 +76,6 @@ yay -S \
 	ruby \
 	scdoc \
 	solaar \
-	swaybg \
 	tlrc \
 	tmux \
 	tree \
@@ -89,7 +91,7 @@ yay -S \
 	wireshark-qt \
 	nwg-look \
 	catppuccin-gtk-theme-mocha \
-	polkit-kde-agent \
+	polkit-gnome \
 	libvirt \
 	virt-manager \
 	gvfs \
@@ -101,6 +103,7 @@ yay -S \
 	qalculate-gtk \
 	hyprlock \
 	hypridle \
+	hyprpaper \
 	libvips \
 	rsync \
 	kubectl \
@@ -110,7 +113,9 @@ yay -S \
 	k3d \
 	go-task-bin \
 	kubeseal \
-	noto-fonts-emoji
+	noto-fonts-emoji \
+	spotify-launcher \
+	swayosd-git
 
 mise use -g node@20
 mise use -g node@corretto-17
@@ -120,11 +125,15 @@ mise use -g usage
 
 chsh -s $(which zsh)
 
+sudo usermod -aG docker "$USER"
+sudo usermod -aG wireshark "$USER"
+sudo systemctl enable --now libvirtd.socket
+sudo systemctl enable --now docker.socket
+sudo systemctl enable --now swayosd-libinput-backend.service
+
 systemctl enable --force --now seatd
 
 gh auth login
 
 sudo ln -s /usr/bin/alacritty /usr/bin/xterm
-sudo usermod -aG docker "$USER"
-sudo usermod -aG wireshark "$USER"
-sudo systemctl enable --now libvirtd.socket
+sudo ln -s /usr/bin/go-task /usr/bin/task
