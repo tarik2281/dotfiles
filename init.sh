@@ -20,6 +20,10 @@ set -eu
 
 user_zshrc="$HOME/.zshrc"
 
+if [ ! -f "$user_zshrc" ]; then
+	touch "$user_zshrc"
+fi
+
 if ! grep -Fxq "### Added by dotfiles" "$user_zshrc"; then
 	{
 		echo ""
@@ -47,9 +51,29 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
 fi
 
 if [ -f "/etc/arch-release" ]; then
+	link_file ".config/gtk-3.0/gtk.css"
 	link_file ".config/hypr"
 	link_file ".config/swayosd"
 	link_file ".config/waybar"
 	link_file ".config/wofi"
 	link_file ".config/spotify-launcher.conf"
+	link_file ".config/mimeapps.list"
+
+	if [ ! -f "$HOME/.config/xfce4/helpers.rc" ]; then
+		mkdir -p "$HOME/.config/xfce4"
+		touch "$HOME/.config/xfce4/helpers.rc"
+	fi
+
+	if ! grep -q "TerminalEmulator" "$HOME/.config/xfce4/helpers.rc"; then
+		echo "" >>"$HOME/.config/xfce4/helpers.rc"
+		echo "TerminalEmulator=alacritty" >>"$HOME/.config/xfce4/helpers.rc"
+	fi
+
+	if [ ! -d "$HOME/.themes/Material-DeepOcean-BL" ]; then
+		mkdir -p ~/.themes
+		mkdir -p ~/.icons
+		git clone https://github.com/Fausto-Korpsvart/Material-GTK-Themes.git ~/Material-GTK-Themes
+		cp -r ~/Material-GTK-Themes/themes/Material-DeepOcean-BL ~/.themes/
+		cp -r ~/Material-GTK-Themes/icons/DeepOcean ~/.icons/
+	fi
 fi

@@ -10,13 +10,19 @@ if ! command -v yay >/dev/null; then
 	makepkg -si
 fi
 
-sudo pacman -R hyprland || true
+timedatectl set-timezone Europe/Berlin
+
+yay -Sy archlinux-keyring
+yay -Syu
 
 yay -S \
-	sddm \
 	nvidia-dkms \
 	linux \
 	linux-headers \
+	libva \
+	libva-nvidia-driver-git \
+	sddm \
+	seatd \
 	hyprwayland-scanner-git \
 	hyprland-git \
 	pipewire \
@@ -29,23 +35,7 @@ yay -S \
 	qt6gtk2 \
 	qt6-svg \
 	qt6-declarative \
-	libva \
-	libva-nvidia-driver-git
-
-# echo "options nvidia-drm modeset=1" >>/etc/modprobe.d/nvidia.conf
-echo "options nvidia-drm modeset=1" | sudo tee -a /etc/modprobe.d/nvidia.conf
-
-# add 'nvidia_drm.modeset=1 nvidia_drm.fbdev=1 nvidia.NVreg_PreserveVideoMemoryAllocations=1" to options in /boot/loader/entries/arch.conf
-# MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm) in /etc/mkinitcpio.conf
-
-sudo mkinitcpio --config /etc/mkinitcpio.conf --generate /boot/initramfs-custom.img
-
-timedatectl set-timezone Europe/Berlin
-
-yay -Sy archlinux-keyring
-yay -Syu
-
-yay -S \
+	xdg-desktop-portal \
 	xdg-desktop-portal-hyprland \
 	wofi \
 	alacritty \
@@ -94,7 +84,6 @@ yay -S \
 	zsh \
 	wireshark-qt \
 	nwg-look \
-	catppuccin-gtk-theme-mocha \
 	polkit-gnome \
 	libvirt \
 	virt-manager \
@@ -132,13 +121,11 @@ chsh -s $(which zsh)
 
 sudo usermod -aG docker "$USER"
 sudo usermod -aG wireshark "$USER"
+
 sudo systemctl enable --now libvirtd.socket
 sudo systemctl enable --now docker.socket
 sudo systemctl enable --now swayosd-libinput-backend.service
-
-systemctl enable --force --now seatd
-
-gh auth login
+sudo systemctl enable --now seatd
 
 sudo ln -s /usr/bin/alacritty /usr/bin/xterm
 sudo ln -s /usr/bin/go-task /usr/bin/task
