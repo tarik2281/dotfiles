@@ -2,7 +2,7 @@
 
 set -e
 
-sudo pacman -S --needed git base-devel
+# sudo pacman -S --needed git base-devel
 
 if ! command -v yay >/dev/null; then
 	git clone https://aur.archlinux.org/yay-bin.git
@@ -15,6 +15,7 @@ timedatectl set-timezone Europe/Berlin
 yay -Sy archlinux-keyring
 yay -Syu
 
+yay -S hyprwayland-scanner-git
 yay -S \
 	nvidia-dkms \
 	linux \
@@ -23,7 +24,6 @@ yay -S \
 	libva-nvidia-driver-git \
 	sddm \
 	seatd \
-	hyprwayland-scanner-git \
 	hyprland-git \
 	pipewire \
 	wireplumber \
@@ -47,6 +47,7 @@ yay -S \
 	fd \
 	fzf \
 	github-cli \
+	firefox \
 	google-chrome \
 	go-yq \
 	httpie \
@@ -109,10 +110,13 @@ yay -S \
 	noto-fonts-emoji \
 	spotify-launcher \
 	swayosd-git \
-	firewalld
+	firewalld \
+	grim \
+	slurp \
+	gnu-netcat
 
 mise use -g node@20
-mise use -g node@corretto-17
+mise use -g java@corretto-17
 mise use -g go@1.21
 mise use -g rust
 mise use -g usage
@@ -122,6 +126,7 @@ chsh -s $(which zsh)
 sudo usermod -aG docker "$USER"
 sudo usermod -aG wireshark "$USER"
 
+sudo systemctl enable --now sddm.service
 sudo systemctl enable --now libvirtd.socket
 sudo systemctl enable --now docker.socket
 sudo systemctl enable --now swayosd-libinput-backend.service
