@@ -13,6 +13,7 @@ fi
 sudo pacman -R hyprland || true
 
 yay -S \
+	sddm \
 	nvidia-dkms \
 	linux \
 	linux-headers \
@@ -45,6 +46,8 @@ yay -Sy archlinux-keyring
 yay -Syu
 
 yay -S \
+	xdg-desktop-portal-hyprland \
+	wofi \
 	alacritty \
 	cliphist \
 	dante \

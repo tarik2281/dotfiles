@@ -1,0 +1,25 @@
+.thunar toolbar toolbutton image {
+  -gtk-icon-transform: scale(0.75);
+}
+
+.thunar menubar {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.thunar .shortcuts-pane {
+  border-top: 0;
+}
+
+.thunar statusbar {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.thunar treeview {
+  padding: 5px;
+}
