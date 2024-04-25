@@ -2,21 +2,23 @@
 
 set -e
 
-# sudo pacman -S --needed git base-devel
+sudo pacman -S --needed git base-devel
 
 if ! command -v yay >/dev/null; then
 	git clone https://aur.archlinux.org/yay-bin.git
 	cd yay-bin
 	makepkg -si
+	cd ..
+	rm -rf yay-bin
 fi
 
 timedatectl set-timezone Europe/Berlin
 
-yay -Sy archlinux-keyring
+yay -Sy --needed archlinux-keyring
 yay -Syu
 
-yay -S hyprwayland-scanner-git
-yay -S \
+yay -S --needed hyprwayland-scanner-git
+yay -S --needed \
 	nvidia-dkms \
 	linux \
 	linux-headers \
@@ -139,3 +141,13 @@ sudo systemctl enable nvidia-resume.service
 
 sudo ln -s /usr/bin/alacritty /usr/bin/xterm
 sudo ln -s /usr/bin/go-task /usr/bin/task
+
+if ! command -v grimblast; then
+	git clone https://github.com/hyprwm/contrib.git
+	cd contrib/grimblast
+
+	sudo make install
+
+	cd ../..
+	rm -rf contrib
+fi
