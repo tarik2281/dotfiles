@@ -108,6 +108,7 @@ yay -S \
 	go-task-bin \
 	kubeseal \
 	noto-fonts-emoji \
+	noto-fonts \
 	spotify-launcher \
 	swayosd-git \
 	firewalld \
@@ -131,6 +132,10 @@ sudo systemctl enable --now libvirtd.socket
 sudo systemctl enable --now docker.socket
 sudo systemctl enable --now swayosd-libinput-backend.service
 sudo systemctl enable --now seatd
+
+sudo systemctl enable nvidia-suspend.service
+sudo systemctl enable nvidia-hibernate.service
+sudo systemctl enable nvidia-resume.service
 
 sudo ln -s /usr/bin/alacritty /usr/bin/xterm
 sudo ln -s /usr/bin/go-task /usr/bin/task
