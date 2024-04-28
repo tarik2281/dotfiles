@@ -153,7 +153,7 @@ sudo systemctl enable nvidia-resume.service
 sudo ln -s /usr/bin/alacritty /usr/bin/xterm
 sudo ln -s /usr/bin/go-task /usr/bin/task
 
-if ! command -v grimblast; then
+if ! command -v grimblast >/dev/null; then
     git clone https://github.com/hyprwm/contrib.git
     cd contrib/grimblast
 
