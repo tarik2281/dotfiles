@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+export ZSH_TMUX_AUTO_TITLE_IDLE_DELAY=0
+export ZSH_TMUX_AUTO_TITLE_IDLE_TEXT=%pwd
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -26,6 +29,7 @@ export PATH="${ZSH}/bin:$PATH"
 
 fpath=("$ZSH/completions" $fpath)
 
+autoload -U add-zsh-hook
 autoload -U colors && colors
 autoload -U compaudit compinit zrecompile
 autoload -U +X bashcompinit && bashcompinit
@@ -38,6 +42,7 @@ source "${ZSH}/.p10k.zsh"
 
 source "${ZSH}/plugins/colored-man-pages/colored-man-pages.plugin.zsh"
 source "${ZSH}/plugins/zsh-fzf-history-search/zsh-fzf-history-search.plugin.zsh"
+source "${ZSH}/plugins/zsh-tmux-auto-title/zsh-tmux-auto-title.plugin.zsh"
 source "${ZSH}/plugins/yq-repl/yq.plugin.zsh"
 # source "${ZSH}/plugins/jq-zsh-plugin/jq.plugin.zsh"
 source "${ZSH}/plugins/zsh-z/zsh-z.plugin.zsh"
@@ -77,3 +82,8 @@ export FZF_DEFAULT_OPTS=" \
 export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 
+list_files() {
+    la
+}
+
+add-zsh-hook chpwd list_files

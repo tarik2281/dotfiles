@@ -116,7 +116,14 @@ yay -S --needed \
 	firewalld \
 	grim \
 	slurp \
-	gnu-netcat
+	nmap \
+	p7zip \
+	ttf-ms-win11-auto \
+	imv \
+	azure-kubelogin \
+	azure-cli \
+	discord \
+	python-pynvim
 
 mise use -g node@20
 mise use -g java@corretto-17

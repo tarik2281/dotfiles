@@ -1,3 +1,7 @@
+vim.opt.title = true
+vim.opt.titlelen = 0
+vim.opt.titlestring = "%t (%{substitute(getcwd(),$HOME,'~','')}) - nvim"
+
 -- line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true

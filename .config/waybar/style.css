@@ -5,9 +5,10 @@
   border-radius: 0;
   /* font-family: MesloLGS Nerd Font Mono; */
   font-family: Ubuntu Nerd Font;
+  /* font-family: SF Compact; */
   /* font-family: Cantarell; */
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   min-height: 0;
 }
 
@@ -78,6 +79,15 @@ tooltip {
 #custom-power {
   margin-right: 12px;
   margin-left: 18px;
+}
+
+#custom-tunnel {
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+#custom-tunnel.disconnected {
+  opacity: 0.5;
 }
 
 #privacy {

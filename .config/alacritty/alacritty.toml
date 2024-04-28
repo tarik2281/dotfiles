@@ -38,6 +38,7 @@ blur = true
 decorations = "none"
 dynamic_padding = true
 opacity = 0.85
+dynamic_title = true
 
 [window.padding]
 x = 19
