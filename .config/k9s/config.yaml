@@ -4,15 +4,15 @@ k9s:
   refreshRate: 2
   maxConnRetry: 5
   readOnly: false
-  noExitOnCtrlC: false
+  noExitOnCtrlC: true
   ui:
     enableMouse: false
-    headless: false
+    headless: true
     logoless: false
-    crumbsless: false
+    crumbsless: true
     reactive: false
-    noIcons: false
-    skin: transparent
+    noIcons: true
+    skin: catppuccin-mocha-transparent
   skipLatestRevCheck: false
   disablePodCounting: false
   shellPod:
