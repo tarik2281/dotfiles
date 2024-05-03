@@ -127,7 +127,13 @@ yay -S --needed \
     tesseract-data-eng \
     tesseract-data-deu \
     zathura \
-    zathura-pdf-mupdf
+    zathura-pdf-mupdf \
+    python-pysocks \
+    python-setproctitle \
+    webapp-manager
+
+# curl https://fedoraproject.org/fedora.gpg | gpg --import
+# yay -S butane-bin
 
 mise use -g node@20
 mise use -g java@corretto-17
