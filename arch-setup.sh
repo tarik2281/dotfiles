@@ -129,7 +129,6 @@ yay -S --needed \
     zathura \
     zathura-pdf-mupdf \
     python-pysocks \
-    python-setproctitle \
     webapp-manager
 
 # curl https://fedoraproject.org/fedora.gpg | gpg --import

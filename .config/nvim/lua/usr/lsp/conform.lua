@@ -23,6 +23,7 @@ return {
 				bash = { "shfmt" },
 				sh = { "shfmt" },
 				java = { "palantir-java-format" },
+				sql = { "sqlfmt" },
 			},
 			format_on_save = function(bufnr)
 				-- Disable with a global or buffer-local variable

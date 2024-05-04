@@ -46,14 +46,17 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
+				"goimports",
 				"prettierd",
+				"shfmt",
+				"sqlfmt",
 				"stylua",
 				"eslint_d",
-				"goimports",
-				"shfmt",
 				"shellcheck",
 				"markdownlint",
 				"delve",
+				"java-debug-adapter",
+				"java-test",
 			},
 		})
 	end,
