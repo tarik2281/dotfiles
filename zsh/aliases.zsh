@@ -8,18 +8,22 @@ alias se="sudoedit"
 
 alias h='fc -l -r -1 -30'
 
-alias tree="tree -C"
-alias t="tree -C"
-alias t1="tree -C -L 1"
-alias t2="tree -C -L 2"
-alias t3="tree -C -L 3"
-alias t4="tree -C -L 4"
+alias t="tmux"
+alias ta="tmux attach"
+alias tm="tmux new-session -As main -c \$HOME"
 
-alias ta="tree -C -a"
-alias ta1="tree -C -L 1 -a"
-alias ta2="tree -C -L 2 -a"
-alias ta3="tree -C -L 3 -a"
-alias ta4="tree -C -L 4 -a"
+# alias tree="tree -C"
+# alias t="tree -C"
+# alias t1="tree -C -L 1"
+# alias t2="tree -C -L 2"
+# alias t3="tree -C -L 3"
+# alias t4="tree -C -L 4"
+#
+# alias ta="tree -C -a"
+# alias ta1="tree -C -L 1 -a"
+# alias ta2="tree -C -L 2 -a"
+# alias ta3="tree -C -L 3 -a"
+# alias ta4="tree -C -L 4 -a"
 
 alias grep="grep --color=auto"
 
