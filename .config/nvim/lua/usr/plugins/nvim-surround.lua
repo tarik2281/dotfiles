@@ -1,10 +1,10 @@
 return {
     "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    version = "*",
     event = "VeryLazy",
     config = function()
         local nvimsurround = require("nvim-surround")
 
         nvimsurround.setup()
-    end
+    end,
 }

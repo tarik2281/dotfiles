@@ -5,16 +5,17 @@ vim.keymap.set("n", "<leader>fr", "<cmd>Telescope resume<CR>", { desc = "Resume 
 vim.keymap.set("n", "<leader>fa", "<cmd>Telescope find_files<CR>", { desc = "Find files" })
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope git_files<CR>", { desc = "Find files" })
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Live grep" })
+vim.keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics<CR>", { desc = "Diagnostics" })
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Find buffers" })
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Find help" })
 vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "Find recently opened files" })
 vim.keymap.set("n", "<leader>ft", "<cmd>Telescope filetypes<CR>", { desc = "Set filetype" })
 vim.keymap.set("n", "<leader>fy", "<cmd>Telescope yaml_schema<CR>", { desc = "Set yaml schema" })
 vim.keymap.set(
-	"n",
-	"<leader>fs",
-	"<cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
-	{ desc = "Dynamic workspace symbols" }
+    "n",
+    "<leader>fs",
+    "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
+    { desc = "Dynamic workspace symbols" }
 )
 
 vim.keymap.set("n", "<leader>dv", "<cmd>DiffviewOpen<CR>", { desc = "Open diffview" })

@@ -129,7 +129,8 @@ yay -S --needed \
     zathura \
     zathura-pdf-mupdf \
     python-pysocks \
-    webapp-manager
+    webapp-manager \
+    golangci-lint
 
 # curl https://fedoraproject.org/fedora.gpg | gpg --import
 # yay -S butane-bin
