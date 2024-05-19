@@ -130,7 +130,9 @@ yay -S --needed \
     zathura-pdf-mupdf \
     python-pysocks \
     webapp-manager \
-    golangci-lint
+    golangci-lint \
+    git-credential-manager \
+    yt-dlp
 
 # curl https://fedoraproject.org/fedora.gpg | gpg --import
 # yay -S butane-bin
@@ -158,6 +160,8 @@ sudo systemctl enable nvidia-resume.service
 
 sudo ln -s /usr/bin/alacritty /usr/bin/xterm
 sudo ln -s /usr/bin/go-task /usr/bin/task
+
+git-credential-manager configure
 
 if ! command -v grimblast >/dev/null; then
     git clone https://github.com/hyprwm/contrib.git
