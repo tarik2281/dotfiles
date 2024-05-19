@@ -38,6 +38,7 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous occurrence" })
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("i", "jj", "<Esc>")
+vim.keymap.set("i", "kj", "<Esc>")
 
 vim.keymap.set("x", "<leader>p", '"_dP')
 vim.keymap.set({ "n", "v" }, "<C-p>", '"+p', { desc = "Paste from system clipboard" })
