@@ -6,10 +6,20 @@ export ZSH_TMUX_AUTO_TITLE_IDLE_TEXT=%pwd
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+HISTDUP=erase
 # setopt appendhistory
 # setopt SHARE_HISTORY
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 setopt INC_APPEND_HISTORY_TIME
 setopt globdots
+
+bindkey -v
+bindkey '\ej' history-search-forward
+bindkey '\ek' history-search-backward
 
 if command -v brew &> /dev/null; then
     brew_prefix=$(brew --prefix)
@@ -58,16 +68,16 @@ else
   zcompile "${ZSH}/cache/.zcompdump"
 fi
 
-zstyle ':completion:*' matcher-list 'r:|?=**'
-
 source "${ZSH}/plugins/zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh"
 
 source "${ZSH}/plugins/fzf-tab/fzf-tab.plugin.zsh"
 source "${ZSH}/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 source "${ZSH}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
+zstyle ':completion:*' matcher-list 'r:|?=**'
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:zshz:*' sort false
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 source "${ZSH}/plugins/gradle/gradle.plugin.zsh"
 source "${ZSH}/aliases.zsh"
@@ -77,7 +87,8 @@ source "${ZSH}/functions.zsh"
 export FZF_DEFAULT_OPTS=" \
     --color=bg+:#313244,spinner:#f5e0dc,hl:#f38ba8 \
     --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
-    --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+    --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+    --bind 'ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up'"
 
 export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -87,3 +98,5 @@ list_files() {
 }
 
 add-zsh-hook chpwd list_files
+
+# eval "$(fzf --zsh)"
