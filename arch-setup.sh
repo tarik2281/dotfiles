@@ -132,7 +132,8 @@ yay -S --needed \
     webapp-manager \
     golangci-lint \
     git-credential-manager \
-    yt-dlp
+    yt-dlp \
+    postgresql-client
 
 # curl https://fedoraproject.org/fedora.gpg | gpg --import
 # yay -S butane-bin
