@@ -12,6 +12,9 @@ vim.opt.cursorline = true
 
 vim.opt.signcolumn = "yes"
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 -- indentation
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
