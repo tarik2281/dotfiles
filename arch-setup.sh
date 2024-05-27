@@ -133,7 +133,9 @@ yay -S --needed \
     golangci-lint \
     git-credential-manager \
     yt-dlp \
-    postgresql-client
+    postgresql-client \
+    eza \
+    lazydocker
 
 # curl https://fedoraproject.org/fedora.gpg | gpg --import
 # yay -S butane-bin

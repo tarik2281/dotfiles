@@ -2,6 +2,10 @@ vim.opt.title = true
 vim.opt.titlelen = 0
 vim.opt.titlestring = "%t (%{substitute(getcwd(),$HOME,'~','')}) - nvim"
 
+vim.opt.scrolloff = 10
+
+vim.opt.hlsearch = true
+
 -- line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true

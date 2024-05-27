@@ -1,8 +1,7 @@
 # Aliases
 
-alias ls="ls --color=auto"
-alias ll="ls -l"
-alias la="ls -lah"
+alias l="eza --icons=always -la"
+alias la="l"
 
 alias se="sudoedit"
 
