@@ -135,7 +135,9 @@ yay -S --needed \
     yt-dlp \
     postgresql-client \
     eza \
-    lazydocker
+    lazydocker \
+    tumbler \
+    swappy
 
 # curl https://fedoraproject.org/fedora.gpg | gpg --import
 # yay -S butane-bin
