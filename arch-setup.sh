@@ -137,7 +137,11 @@ yay -S --needed \
     eza \
     lazydocker \
     tumbler \
-    swappy
+    swappy \
+    pavucontrol \
+    icoextract \
+    thunar-archive-plugin \
+    file-roller
 
 # curl https://fedoraproject.org/fedora.gpg | gpg --import
 # yay -S butane-bin
