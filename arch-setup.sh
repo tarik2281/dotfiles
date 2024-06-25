@@ -138,6 +138,10 @@ yay -S --needed \
     lazydocker \
     tumbler \
     swappy \
+    pavucontrol \
+    icoextract \
+    thunar-archive-plugin \
+    file-roller \
     gvfs-mtp \
     android-file-transfer \
     bluez \

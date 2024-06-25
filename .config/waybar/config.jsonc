@@ -69,7 +69,7 @@
     },
     "clock#date": {
       "interval": 1,
-      "format": "{:%d. %b %Y}",
+      "format": "{:%a. %d. %b}",
       "tooltip": false
     },
     "temperature": {

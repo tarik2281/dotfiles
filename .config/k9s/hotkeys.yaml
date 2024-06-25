@@ -1,0 +1,11 @@
+hotKeys:
+  b:
+    shortCut: b
+    description: pods /eu-sepo
+    command: pods /eu-sepo
+    override: true
+  m:
+    shortCut: m
+    description: pods /tu-sepo
+    command: pods /tu-sepo
+    override: true

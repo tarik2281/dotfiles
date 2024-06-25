@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+low32=$(od -An -td4 -N4 </dev/urandom)
+high32=$(od -An -td4 -N4 </dev/urandom)
+long=$(($low32 + ($high32 << 32)))
+
+printf "%s" "$long"

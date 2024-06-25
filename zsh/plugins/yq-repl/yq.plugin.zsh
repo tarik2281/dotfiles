@@ -56,7 +56,7 @@ zle -N yq-complete-json
 # zle -N yq-complete-properties
 # bind `alt + j` to yq-complete
 bindkey '\ey' yq-complete
-bindkey '\ej' yq-complete-json
+# bindkey '\ej' yq-complete-json
 # bindkey '\ep' yq-complete-properties
 
 fi
