@@ -137,7 +137,11 @@ yay -S --needed \
     eza \
     lazydocker \
     tumbler \
-    swappy
+    swappy \
+    gvfs-mtp \
+    android-file-transfer \
+    bluez \
+    blueman
 
 # curl https://fedoraproject.org/fedora.gpg | gpg --import
 # yay -S butane-bin
