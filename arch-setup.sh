@@ -17,7 +17,7 @@ timedatectl set-timezone Europe/Berlin
 yay -Sy --needed archlinux-keyring
 yay -Syu
 
-yay -S --needed hyprwayland-scanner-git
+# yay -S --needed hyprwayland-scanner-git
 yay -S --needed \
     nvidia-dkms \
     linux \
@@ -26,7 +26,7 @@ yay -S --needed \
     libva-nvidia-driver-git \
     sddm \
     seatd \
-    hyprland-git \
+    hyprland \
     pipewire \
     wireplumber \
     qt5-wayland \
@@ -53,7 +53,7 @@ yay -S --needed \
     google-chrome \
     go-yq \
     httpie \
-    hyprpicker-git \
+    hyprpicker \
     jq \
     k9s \
     keepassxc \
@@ -145,7 +145,10 @@ yay -S --needed \
     gvfs-mtp \
     android-file-transfer \
     bluez \
-    blueman
+    blueman \
+    teams-for-linux \
+    gnome-disk-utility \
+    ldns
 
 # curl https://fedoraproject.org/fedora.gpg | gpg --import
 # yay -S butane-bin
