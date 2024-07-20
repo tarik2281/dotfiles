@@ -148,7 +148,19 @@ yay -S --needed \
     blueman \
     teams-for-linux \
     gnome-disk-utility \
-    ldns
+    ldns \
+    aria2
+
+if [ "1" = "0" ]; then
+    yay -S --needed \
+        lib32-nvidia-utils \
+        lib32-alsa-lib \
+        lib32-alsa-plugins \
+        lib32-libpulse \
+        lib32-pipewire \
+        steam \
+        bottles
+fi
 
 # curl https://fedoraproject.org/fedora.gpg | gpg --import
 # yay -S butane-bin
